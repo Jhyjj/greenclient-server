@@ -48,7 +48,8 @@ app.get('/detailview/:id', async (req,res)=>{
     connection.query(
         `select * from customer_table where no=${id}`,
         (err,rows,fields)=>{
-            res.send(rows)
+            res.send(rows[0])
+            console.log(rows);
         }
     )
 })
